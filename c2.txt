@@ -1,0 +1,3 @@
+shared content v1
+middle line A
+tail line
