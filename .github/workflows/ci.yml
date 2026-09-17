@@ -1,0 +1,15 @@
+name: ci
+on:
+  pull_request:
+  merge_group:
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          if [ -f .ci-fail ]; then
+            echo "forced failure (.ci-fail present)"
+            exit 1
+          fi
+          echo "ci pass"
